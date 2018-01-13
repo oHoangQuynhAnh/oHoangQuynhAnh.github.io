@@ -1,0 +1,468 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+  Jekyll integration by somiibo.com
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+--><html>
+	<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+<title>Các qui tắc đặt tên trong CSS</title>
+<meta name="description" content="">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+<link rel="manifest" href="/assets/icon/manifest.json">
+<link rel="mask-icon" href="/assets/icon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icon/favicon.ico">
+<meta name="msapplication-config" content="/assets/icon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<noscript><link rel="stylesheet" href="/assets/css/noscript.css"></noscript>
+
+	</head>
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Header -->
+        <header id="header">
+          <a href="/" class="logo">Quynh Anh Hoang</a>
+        </header>
+
+				<!-- Nav -->
+					<nav id="nav">
+
+            <ul class="links">
+  <li class=""><a href="/">Home</a></li>
+  <li class=""><a href="/about/">About</a></li>
+  <li class=" active "><a href="/blog/">Blog</a></li>
+  <li class=""><a href="/til/">Learned</a></li>
+</ul>
+
+
+						<ul class="icons">
+              <li><a href="https://facebook.com/annhoang191" class="icon fa-facebook" rel="nofollow"><span class="label">Facebook</span></a></li>
+              <li><a href="https://github.com/annhoang191" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+				<div id="main">
+          <section class="post">
+    				<header class="major">
+      				<span class="date">21 Jan 2018</span>
+      				<h1>Các qui tắc đặt tên trong CSS</h1>
+      				<p>Vẫn là bài dịch từ FreeCodeCamp medium</p>
+      			</header>
+      			<div class="image-post main"><img src="https://cdn-images-1.medium.com/max/1000/1*YunI3ChUVMlpmFzo75FczQ.png" alt=""></div>
+      			<p></p>
+<p>Tôi đã nghe nhiều lập trình viên nói rằng họ ghét CSS. Bằng kinh nghiệm bản thân, tôi nghĩ những lời kêu gào đó chẳng qua chỉ là kết quả của việc không học CSS một cách cẩn thận.</p>
+
+<p>CSS không phải thứ “ngôn ngữ” đẹp nhất, nhưng nó thực sự đã hoàn thành tốt nhiệm vụ của mình là “tô điểm” cho web suốt 20 năm qua. Không quá tệ, đúng không?</p>
+
+<p>Tuy nhiên càng viết CSS nhiều bạn sẽ sớm nhận ra một khuyết điểm to lớn của nó.</p>
+
+<p>Rất khó để bảo trì những dòng code CSS.</p>
+
+<p>Những dòng code CSS bị viết một cách cẩu thả sẽ sớm trở thành cơn ác mộng khủng khiếp.</p>
+
+<p>Dưới đây là một vài quy tắc đặt tên cho CSS sẽ giúp bạn bớt stress một chút và thoát khỏi hàng tiếng đồng hồ chìm trong những dòng code.<br>
+<img src="https://davidwalsh.name/demo/css-comic.jpg">
+<br>
+<small>Bạn đã từng như thế này rồi đúng không?</small></p>
+
+<h3 id="sử-dụng-gạch-ngang-giữa-các-từ">Sử dụng gạch ngang giữa các từ</h3>
+<p>Nếu bạn đã viết Javascript, thì việc đặt tên biến theo kiểu “camelCase” khá thông dụng.</p>
+<pre><code>
+var redBox = document.getElementById('...')
+</code></pre>
+<p>Tuyệt, đúng không?</p>
+
+<p>Vấn đề là việc đặt tên như vậy không phù hợp với CSS cho lắm.</p>
+
+<p>Đừng làm như này:</p>
+<pre><code>
+	<strong>.redBox</strong> {
+	  border: 1px solid red;
+	}
+</code></pre>
+
+<p>Thay vào đó hãy viết:</p>
+
+<pre><code>
+	<strong>.red-box</strong> {
+	  border: 1px solid red;
+	}
+</code></pre>
+<p>Đây là một chuẩn đặt tên khá phổ biến trong CSS. Nó cũng khá dễ đọc.</p>
+
+<p>Đồng thời việc đặt tên như vậy sẽ nhất quán hơn với tên các thuộc tính css</p>
+<pre><code>
+	<em>//Đúng</em>
+	.some-classe {
+	  <strong>font-weight:</strong> 10em;
+	}
+	//Sai
+	.some-class {
+	  <strong>fontWeight:</strong> 10em;
+	}
+</code></pre>
+
+<h3 id="chuẩn-đặt-tên-bem">Chuẩn đặt tên BEM</h3>
+
+<p>Mỗi nhóm sẽ có những cách viết selectors của CSS khác nhau. Có nhóm sử dụng gạch nối, có nhóm sẽ thích sử dụng một chuẩn đặt tên quy củ hơn gọi là BEM.</p>
+
+<p>Nhìn chung, có 3 vấn đề chính mà các chuẩn đặt tên CSS sẽ cố gắng giải quyết:</p>
+
+<ol>
+  <li>Biết selectors có chức năng gì dựa vào tên của nó.</li>
+  <li>Biết selectors được dùng ở chỗ nào dựa vào tên của nó.</li>
+  <li>Biết mối quan hệ giữa các tên class dựa vào tên của chúng.</li>
+</ol>
+
+<p>Bạn đã bao giờ nhìn thấy những tên class được viết thế này chưa:</p>
+<pre><code>
+  <strong>.nav--secondary </strong>{
+    ...
+  }
+  <strong>.nav__header </strong>{
+    ...
+  }
+</code></pre>
+
+<p>Đó chính là chuẩn BEM.</p>
+
+<h3 id="giải-thích-bem-cho-một-đứa-trẻ-5-tuổi">Giải thích BEM cho một đứa trẻ 5 tuổi.</h3>
+
+<p>BEM cố gắng chia giao diện người dùng thành những mảnh nhỏ có thể tái sử dụng.</p>
+
+<p>Cùng xem hình vẽ dưới đây nhé:<br>
+<img src="https://cdn-images-1.medium.com/max/800/1*qFy4XIpxbWx4oaOA3TYqpQ.png"><br>
+<small>Đây là một bức ảnh tuyệt đỉnh của một tên người que.</small></p>
+
+<p>Không, nó không được giải gì cả : (</p>
+
+<p>Người que đại diện cho một mảnh, giống như một khối thiết kế.</p>
+
+<p>Có lẽ tới lúc này bạn đã đoán ra B trong BEM đại diện cho “Block” (khối)</p>
+
+<p>Trong thực tế, một block có thể đại diện cho một thanh điều hướng, header, footer, hay các khối khác.</p>
+
+<p>Dựa theo ví dụ được giải thích ở trên, một tên class lý tưởng có thể được sử dụng cho thành phần “người que” trên sẽ là <code class="highlighter-rouge">stick-man</code>.</p>
+
+<p>Mảnh này sẽ được thiết kế lại như sau:</p>
+
+<pre><code>
+	.stick-man {
+
+	}
+</code></pre>
+
+<p>Chúng ta đã sử dụng gạch ngang ở đây!<br>
+<img src="https://cdn-images-1.medium.com/max/800/1*US1EoM_lvYOeJabGDhV2Eg.png"><br></p>
+
+<h3 id="e-cho-elements-phần-tử">E cho Elements (phần tử)</h3>
+
+<p>E trong BEM đại diện cho Elements</p>
+
+<p>Nhìn chung thì các khối hiếm khi được tạo thành một cách độc lập.</p>
+
+<p>Ví dụ, một tên người que phải có 1 cái <code class="highlighter-rouge">đầu</code>, hai <code class="highlighter-rouge">cẳng tay</code>, và một <code class="highlighter-rouge">đôi chân</code>.</p>
+
+<p><code class="highlighter-rouge">đầu</code>, <code class="highlighter-rouge">tay</code>, <code class="highlighter-rouge">chân</code> là những phần tử nhỏ trong một mảnh lớn. Chúng có thể được coi là những mảnh con hay là con của các phần tử cha mẹ.</p>
+
+<p>Sử dụng chuẩn đặt tên BEM, tên class của các phần tử con sẽ được ngăn cách bằng hai dấu gạch dưới, theo sau là tên phần tử đó.
+Ví dụ</p>
+<pre><code>
+	.stick-man__head {
+
+  }
+	.stick-man__arms {
+
+  }
+	.stick-man__feet {
+
+  }
+</code></pre>
+
+<h3 id="m-cho-modifiers-bổ-nghĩa">M cho Modifiers (bổ nghĩa)</h3>
+
+<p>M trong BEM là viết tắt của Modifiers
+Nếu một tên người que bị thay đổi đi một chút và chúng ta sẽ có một tên người que <code class="highlighter-rouge">xanh</code>, một tên người que <code class="highlighter-rouge">đỏ</code> thì sao? <br>
+<img src="https://cdn-images-1.medium.com/max/800/1*Uj4IOaEtYynnUUJm_hAdwQ.png">
+<br>
+Thực tế tình huống trên sẽ giống với việc chúng ta muốn có một button <code class="highlighter-rouge">đỏ</code> (hoặc <code class="highlighter-rouge">xanh</code> cũng được). Đây chính là trường hợp chúng ta sử dụng bổ nghĩa cho các thành phần.</p>
+
+<p>Sử dụng BEM, tên một class sử dụng bổ nghĩa sẽ được ngăn cách bởi hai gạch ngang, theo sau là tên phần tử.</p>
+
+<p>Ví dụ:</p>
+<pre><code>
+	.stick-man--blue {
+
+  }
+	.stick-man--red {
+
+  }
+</code></pre>
+<p>Ví dụ này chỉ biểu diễn cách một thành phần cha mẹ bị thay đổi. Trong thực tế không phải lúc nào chúng ta cũng chỉ làm việc với những thành phần này.</p>
+
+<p>Nếu chúng ta muốn mỗi tên người que lại có kích thước <code class="highlighter-rouge">đầu</code> khác nhau thì sao?<br>
+<img src="https://cdn-images-1.medium.com/max/800/1*qTM1TfotfLSRNjZ_PnWtAg.png">
+<br>
+Lần này những phần tử  (element) sẽ được thay đổi. Nhớ lại nào, những phần tử là những mảnh con nằm trong khối chứa chúng.</p>
+
+<p>Một <code class="highlighter-rouge">.stick-man</code> đại diện cho <code class="highlighter-rouge">khối</code>, <code class="highlighter-rouge">.stick-man__head</code> là phần tử.</p>
+
+<p>Giống ví dụ trên thì hai gạch ngang cũng có thể được sử dụng như sau:</p>
+<pre><code>
+	<strong>.stick-man__head--smal</strong> {
+
+  }
+	<strong>.stick-man__head--big</strong> {
+
+  }
+</code></pre>
+<p>Một lần nữa hãy chú ý tới cách sử dụng hai <strong>gạch ngang</strong> trong ví dụ trên. Nó thường thể hiện cho trường hợp bổ nghĩa.</p>
+
+<p>Tới lúc này có lẽ bạn đã nắm được cơ bản cách mà chuẩn đặt tên BEM hoạt động rồi đấy.</p>
+
+<p>Cá nhân tôi chỉ hay sử dụng một gạch ngang giữa các tên class cho những dự án đơn giản, BEM thì thường liên quan nhiều tới các dự án hướng tới giao diện người dùng hơn.</p>
+
+<p>Bạn có thể đọc thêm về BEM ở <a href="ttp://getbem.com/naming">đây</a></p>
+
+<h3 id="tại-sao-lại-sử-dụng-các-chuẩn-đặt-tên">Tại sao lại sử dụng các chuẩn đặt tên?</h3>
+
+<p><i>Có hai vấn đề rất khó giải quyết trong ngành khoa học máy tính: vô hiệu hóa cache và đặt tên cho mọi thứ - Phil Karlton </i></p>
+
+<p>Trong lập trình đặt tên là một việc khó khăn. Chúng ta cố gắng làm cho mọi thứ dễ dàng hơn, tiết kiệm thời gian hơn với những dòng code dễ bảo trì.</p>
+
+<p>Đặt tên chuẩn trong CSS sẽ giúp code bạn dễ đọc và bảo trì hơn.</p>
+
+<p>Nếu bạn chọn sử dụng chuẩn BEM, việc nhìn ra mối quan hệ giữa những thành phần trong thiết kế của bạn sẽ dễ dàng hơn, chỉ cần nhìn vào các selectors thôi là bạn đã hiểu rồi.</p>
+
+<p>Bạn đã đủ tự tin chưa?</p>
+
+<h3 id="các-tên-trong-css-với-javascript-hooks">Các tên trong CSS với Javascript Hooks*</h3>
+
+<p>Hôm nay là ngày làm việc đầu tiên của John.</p>
+
+<p>Anh ấy được đưa cho một đoạn code <code class="highlighter-rouge">HTML</code> như sau:</p>
+<xmp>
+	<div class="siteNavigation">
+	</div>
+</xmp>
+
+<p>John đã đọc bài viết này và nhận ra đây không phải đoạn code có tên class được đặt phù hợp trong <code class="highlighter-rouge">CSS</code>. Vậy nên anh ta đã thay đổi lại đoạn code như sau:</p>
+<xmp>
+	<div class="site-navigation">
+	</div>
+</xmp>
+
+<p>Trông có vẻ ổn đúng không?</p>
+
+<p>Tuy nhiên John không biết rằng anh ta đã phá vỡ toàn bộ codebase.</p>
+
+<p>Thế quái nào vậy?</p>
+
+<p>Ở đâu đó trong những dòng code Javascript, có một đoạn sử dụng tới tên class <code class="highlighter-rouge">siteNavigation</code>:</p>
+<pre><code>
+//the Javasript code
+const nav = document.querySelector('.siteNavigation')
+</code></pre>
+<p>Do đó khi thay đổi tên class, biến <code class="highlighter-rouge">nav</code> đã bị <code class="highlighter-rouge">null</code>.</p>
+
+<p>Buồn ghê.</p>
+
+<p>Để tránh những trường hợp như này, các lập trình viên đã tìm ra những phương pháp khác nhau.</p>
+
+<h4>1. Dùng tên class `js-`</h4>
+<p>Một cách để tránh những lỗi như trên là dùng một tên class <strong><code class="highlighter-rouge">js-*</code></strong> để chỉ ra mối quan hệ với phần tử DOM.
+Ví dụ:</p>
+<xmp>
+<div class="site-navigation js-site-navigation">
+</div>
+</xmp>
+<p>Và trong đoạn code Javascript:</p>
+<pre><code>
+//the Javasript code
+const nav = document.querySelector('.js-site-navigation')
+</code></pre>
+<p>Theo chuẩn đặt tên, khi nhìn thấy một tên class <code class="highlighter-rouge">js-site-navigation</code>, mọi người sẽ hiểu có một mối quan hệ giữa phần tử DOM đó trong đoạn code Javascript.</p>
+
+<h4>2. Sử dụng Rel attribute</h4>
+<p>Tôi không hay sử dụng cách này lắm, nhưng tôi đã thấy có người dùng nó.</p>
+
+<p>Bạn có nhận ra đoạn code này không?</p>
+<xmp>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</xmp>
+<p>Đơn giản thì một <strong>rel attribute</strong> định nghĩa mối quan hệ giữa các tài nguyên được liên kết tới đoạn văn bản mà nó được gọi tới.</p>
+
+<p>Trong ví dụ trước với John, kĩ thuật này có thể được sử dụng như sau:</p>
+<xmp>
+	<div class="site-navigation" rel="js-site-navigation">
+	</div>
+</xmp>
+<p>Và trong đọan code javascript:</p>
+<pre><code>
+const nav = document.querySelector("[rel='js-site-navigation']")
+</code></pre>
+
+<p>Tôi vẫn không tin tưởng vào kỹ thuật này lắm, nhưng bạn có thể sẽ tình cờ nhìn thấy nó trong vài codebase. Mấu chốt ý tưởng ở đây là, <i>”Ồ có một mối quan hệ của phần tử này với Javascript, tôi phải sử dụng rel attribute để thể hiện nó.”</i></p>
+
+<p>Web là một xứ sở rộng lớn với nhiều kĩ thuật khác nhau để giải quyết cùng một vấn đề mà.</p>
+
+<h4>3. Đừng dùng data attributes</h4>
+<p>Một vài lập trình viên sử dụng data attributes như một Javascript hooks. Điều này không đúng. Theo đúng định nghĩa, data attributes chỉ được dùng cho việc lưu trữ những dữ liệu tùy biến.<br>
+<img src="https://cdn-images-1.medium.com/max/800/1*wYSuEHKyr4gikmoEaq-9jw.png">
+<br>
+<small>Các dùng data attributes tốt ở twitter</small></p>
+<h3 id="mẹo-nhỏ-viết-nhiều-comments-cho-css-hơn">Mẹo nhỏ: Viết nhiều comments cho CSS hơn.</h3>
+
+<p>Việc này không liên quan gì tới chuẩn đặt tên cả, nhưng nó cũng sẽ giúp bạn tiết kiệm thời gian.</p>
+
+<p>Trong khi rất nhiều lập trình viên cố gắng không viết comment cho JavaScript hoặc chỉ viết rất ít, thì trong CSS tôi nghĩ bạn nên viết nhiều comments hơn.</p>
+
+<p>Vì CSS không phải “ngôn ngữ” đẹp nhất, những comments có cấu trúc tốt sẽ giúp bạn tiết kiệm nhiều thời gian hơn khi bạn phải cố hiểu nó.</p>
+
+<p>Việc này không gây ảnh hưởng gì đâu.</p>
+
+<p>Cứ thử đọc xem <a href="https://github.com/twbs/bootstrap/blob/v4-dev/scss/_carousel.scss">source code</a> của Bootstrap đã được comment cẩn thận thế nào đi.</p>
+
+<p>Bạn không phải viết comments cho dòng <code class="highlighter-rouge">color: red</code> chỉ để nói rằng nó sẽ cho ra một màu đỏ. Nhưng nếu bạn viết những kĩ thuật CSS khác không được tường minh cho lắm, hãy viết comment.</p>
+
+<h3 id="đã-sẵn-sàng-lên-mức-chuyên-nghiệp-chưa">Đã sẵn sàng lên mức chuyên nghiệp chưa?</h3>
+
+<p>Tôi có tạo một bài hướng dẫn CSS miễn phí để giúp bạn mài giũa kĩ năng CSS của mình.
+Lấy cuốn tài liệu đó ở <a href="https://ohansemmanuel.us17.list-manage.com/subscribe?u=6fa63587721dce8a5eb987a2a&amp;id=ba27bc2a77"> đây</a>.<br>
+<img src="https://cdn-images-1.medium.com/max/800/1*fJabzNuhWcJVUXa3O5OlSQ.png">
+<br>
+<small>7 mẹo CSS bạn chưa biết</small></p>
+<blockquote>
+tài liệu: https://medium.freecodecamp.org/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849
+</blockquote>
+
+      		</section>
+
+          <div class="comments-wrapper">
+          <div id="disqus_thread"></div>
+          <script>
+              /**
+               *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+               *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+               */
+
+              var disqus_config = function () {
+                  this.page.url = '/blog/CSS-naming/';  /*Replace PAGE_URL with your page's canonical URL variable*/
+                  this.page.identifier = '/blog/CSS-naming/'; /*Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
+              };
+
+              (function() {  /* dont endit below this line */
+                  var d = document, s = d.createElement('script');
+
+                  s.src = 'https://default.disqus.com/embed.js';
+
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+        </div>
+<!-- /.comments-wrapper -->
+
+
+					<!-- Footer -->
+						<footer>
+              <ul class="actions">
+                <li><a href="/blog/" class="button">My messy words</a></li>
+              </ul>
+						</footer>
+					</div>
+
+				<!-- Footer -->
+        <footer id="footer">
+  <section>
+    <form method="POST" action="https://formspree.io/hquynhanh19@gmail.com">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" rows="3"></textarea>
+      </div>
+      <ul class="actions">
+        <li><input type="submit" value="Send Message"></li>
+      </ul>
+    </form>
+  </section>
+  <section class="split contact">
+    <section class="alt">
+      <h3>Location</h3>
+      <p>Hanoi, VN</p>
+    </section>
+    <section>
+      <h3>Phone</h3>
+      <p><a href="tel:947-548-566">947-548-566</a></p>
+    </section>
+    <section>
+      <h3>Email</h3>
+      <p><a href="mailto:hquynhanh19@gmail.com">hquynhanh19@gmail.com</a></p>
+    </section>
+    <section>
+      <h3>Social</h3>
+      <ul class="icons alt">
+        <li><a href="https://facebook.com/annhoang191" class="icon fa-facebook" rel="nofollow"><span class="label">Facebook</span></a></li>
+        <li><a href="https://github.com/annhoang191" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
+      </ul>
+    </section>
+  </section>
+</footer>
+<!-- Copyright -->
+<div id="copyright">
+  <ul>
+<li>© HTML5 UP</li>
+<li>Design by <a href="https://html5up.net">HTML5 UP</a>
+</li>
+<li>Jekyll Integration by <a href="https://somiibo.com">Somiibo</a>
+</li>
+</ul>
+</div>
+
+
+			</div>
+
+      <!-- Scripts -->
+  		<!-- DYN -->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery.scrollex.min.js"></script>
+<script src="/assets/js/jquery.scrolly.min.js"></script>
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/main.js"></script>
+
+			<script async src="https://www.googletagmanager.com/gtag/js?id=default"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'default');
+</script>
+
+
+	</body>
+</html>

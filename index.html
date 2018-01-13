@@ -1,18 +1,134 @@
 ---
-layout: default
+layout: null
+title: Ann's place
+description: Home
+sitemap:
+    priority: 1.0
+    lastmod: 2017-11-02
+    changefreq: weekly
 ---
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+  Jekyll integration by somiibo.com
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+    {% include head.html %}
+	</head>
+	<body class="is-loading">
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+				<!-- Intro -->
+					<div id="intro">
+            <h1>{{site.title}}</h1>
+						<h2>A long time ago, in a galaxy far far away...</h2>
+						<p> There was a girl. She would do anything for food so her dog could have a better life.
+							That girl is me. If you come across this page and read all these words,
+							please help me, I'm poor. You can scroll through this page to learn more about me before
+							making your hiring decision.</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+				<!-- Header -->
+					<header id="header">
+						<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
+					</header>
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+				<!-- Nav -->
+					<nav id="nav">
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
+            {% include nav.html %}
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
+						<ul class="icons">
+              <li><a href="https://facebook.com/annhoang191" class="icon fa-facebook" rel="nofollow"><span class="label">Facebook</span></a></li>
+              <li><a href="https://github.com/annhoang191" class="icon fa-github" rel="nofollow"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+				<!-- Main -->
+					<div id="main">
+						<!-- Featured Post -->
+							<article class="post featured">
+								<a href="#" class="image main">
+									<img src="{{ "/images/pic01.jpg" | absolute_url }}" alt=""/>
+								</a>
+								<header class="major">
+									<h3>I write bad code and make self-deprecating jokes</h3>
+								</header>
+								<p>
+									My full name is Hoàng Quỳnh Anh. You can read more about me
+									<a href="https://annhoang191.github.io/about/">here</a>.
+								</p>
+								<p>This is my portfolio page. If you are looking for an intern who is willing to learn anything,
+									 you come to the right place. I have some experience in web development. You can see my projects below.
+									 For more info, you can check my
+									 <a href="https://goo.gl/hkPxUx" target="_blank">CV</a> or visit my github.
+								</p>
+								<hr>
+								<h3 class="text-center heading">things i made</h3>
+								<hr>
+                <p class="project">
+									<span class="image left"><img src="https://c1.staticflickr.com/5/4675/28075621079_6fbf839e6a_o.jpg" alt=""></span>
+									<b>My not-so-trashy project</b><br>
+									This is a website for promoting and joining events I made with my other 2 teammates at <em>FramgiaEdu</em>
+									to learn Ruby and Ruby on Rails. To see what I've done in this project, you can check my cv.
+									<br>
+									Here is the link to this website. Where to go? Go to <a href="https://where2go2night2.herokuapp.com/">my website!</a>
+								</p>
+								<hr/>
+                <p class="project">
+									<span class="image left"><img src="https://c1.staticflickr.com/5/4617/25811159968_a74fc19b6d_b.jpg" alt=""></span>
+									<b>Quyết đê</b><br>
+									A simple SaaS website I built under instructors’ training.
+									With this site, users can submit their questions and answer others by voting yes/no.
+									I made this with NodeJS but now I can't even remember what i've learned.
+								</p>
+								<hr/>
+                <p class="project">
+									<span class="image left"><img src="https://c1.staticflickr.com/5/4678/38785447705_bca0711e6c_b.jpg" alt=""></span>
+									<b>My first project in my entire career</b><br>
+									This is a simple platformer game based on the infamous Super Mario Bros to help me learn JavaScript and Phaser. I made this game with
+									my four-member team at <em>Techkids</em>. A bunch of spaghetti code.
+								</p>
+							</article>
+						<!-- Posts -->
+							<section class="posts">
+                {% for post in site.posts limit:3 %}
+                {% assign mod3 = forloop.index | modulo: 3 %}
+  								<article>
+  									<header>
+  										<span class="date">{{ post.date | date_to_string }}</span>
+  										<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</h2>
+  									</header>
+  									<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
+  									<p>{{ post.excerpt }}</p>
+  									<ul class="actions">
+  										<li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
+  									</ul>
+  								</article>
+                {% endfor %}
+							</section>
+						<!-- Footer -->
+							<footer>
+                <ul class="actions">
+                  <li><a href="{{ "/blog/" | absolute_url }}" class="button">More</a></li>
+                </ul>
+							</footer>
+
+					</div>
+
+				<!-- Footer -->
+        {% include foot.html %}
+
+			</div>
+
+		<!-- Scripts -->
+		{% include scripts-main.html %}
+    {% include tracking.html %}
+
+	</body>
+</html>
